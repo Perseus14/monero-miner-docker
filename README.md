@@ -10,7 +10,7 @@ Image of latest [XMRig](https://github.com/xmrig/xmrig) version, built on Alpine
 For easy start, with default configuration.
 
 ```sh
+
 docker build -t miner .
 docker run --name monero_miner miner
-sh```
 
