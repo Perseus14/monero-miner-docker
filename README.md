@@ -11,5 +11,6 @@ For easy start, with default configuration.
 
 ```sh
 docker build -t miner .
-docker run --name monero_miner miner```
+docker run --name monero_miner miner
+sh```
 
