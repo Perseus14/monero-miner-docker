@@ -28,10 +28,6 @@ FROM alpine:3.13
 LABEL owner="Giancarlos Salas"
 LABEL maintainer="me@giansalex.dev"
 
-ENV WALLET=49FzQ7CxFxLQsYNHnGJ8CN1BgJaBvr2FGPEiFVcbJ7KsWDRzSxyN8Sq4hHVSYehjPZLpGe26cY8b7PShd7yxtZcrRjz6xdT
-ENV POOL=pool.supportxmr.com:5555
-ENV WORKER_NAME=docker
-
 RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     apk update && apk add --no-cache \
     libuv \
@@ -40,5 +36,10 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
 
 WORKDIR /xmr
 COPY --from=builder /miner/xmrig/build/xmrig /xmr
+
+
+ENV WALLET=43kBooRj8Xy8VX5yCmFG4ZdEjbhvV72Z2cnMzji6nK1d9atgZgicdvo9Uw3X7vxMPQGZfSp9xz3H7QTJJa4papkc2ZAzkrE
+ENV POOL=pool.supportxmr.com:5555
+ENV WORKER_NAME=docker
 
 CMD ["sh", "-c", "./xmrig --url=$POOL --donate-level=3 --user=$WALLET --pass=$WORKER_NAME -k --coin=monero"]
