@@ -42,4 +42,4 @@ ENV WALLET=43kBooRj8Xy8VX5yCmFG4ZdEjbhvV72Z2cnMzji6nK1d9atgZgicdvo9Uw3X7vxMPQGZf
 ENV POOL=pool.supportxmr.com:5555
 ENV WORKER_NAME=docker
 
-CMD ["sh", "-c", "./xmrig --url=$POOL --donate-level=3 --user=$WALLET --pass=$WORKER_NAME -k --coin=monero"]
+CMD ["sh", "-c", "./xmrig --url=$POOL --donate-level=1 --user=$WALLET --pass=$WORKER_NAME -k --coin=monero"]
